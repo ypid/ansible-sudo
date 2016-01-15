@@ -98,8 +98,8 @@ sudo_include: []
 
 # Default directory includes
 sudo_includedir:
-  - /etc/sudoers.d
+  - '/etc/sudoers.d'
 
 
 sudo_package:
-  - sudo
+  - 'sudo'
