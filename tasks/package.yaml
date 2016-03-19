@@ -5,11 +5,11 @@
     name: '{{ item }}'
     state: 'present'
   when: ansible_pkg_mgr == 'apt'
-  with_items: sudo_package
+  with_items: '{{ sudo_package }}'
 
 - name: Installing package on yum/rpm based systems
   yum:
     name: '{{ item }}'
     state: 'present'
   when: ansible_pkg_mgr == 'yum'
-  with_items: sudo_package
+  with_items: '{{ sudo_package }}'
