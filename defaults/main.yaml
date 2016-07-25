@@ -45,9 +45,7 @@ sudo_cmd_alias_host: {}
 
 # Default sudo defaults
 sudo_defaults:
-  - 'requiretty'
   - '!visiblepw'
-  # - 'insults'
   - 'always_set_home'
   - 'env_reset'
   - 'env_keep  = "COLORS DISPLAY HOSTNAME HISTSIZE INPUTRC KDEDIR LS_COLORS"'
@@ -56,6 +54,12 @@ sudo_defaults:
   - 'env_keep += "LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE"'
   - 'env_keep += "LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET XAUTHORITY"'
   - 'secure_path = "/sbin:/bin:/usr/sbin:/usr/bin"'
+
+  ## Leaving it disabled (following the upstream defaults) for this Ansible role.
+  # - 'insults'
+
+  ## Leaving it disabled (following the upstream defaults) because this can break scripts which are using sudo!
+  # - 'requiretty'
 
 sudo_defaults_group: []
 sudo_defaults_host: []
