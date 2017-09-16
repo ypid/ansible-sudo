@@ -53,7 +53,7 @@ sudo_defaults:
   - 'env_keep += "LC_COLLATE LC_IDENTIFICATION LC_MEASUREMENT LC_MESSAGES"'
   - 'env_keep += "LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE"'
   - 'env_keep += "LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET XAUTHORITY"'
-  - 'secure_path = "/sbin:/bin:/usr/sbin:/usr/bin"'
+  - 'secure_path = "/sbin:/bin:/usr/sbin:/usr/bin{{ sudo__secure_path_group|d("") + sudo__secure_path_host|d("") }}"'
 
   ## Leaving it disabled (following the upstream defaults) for this Ansible role.
   # - 'insults'
